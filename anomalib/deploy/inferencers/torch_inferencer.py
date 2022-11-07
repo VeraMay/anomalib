@@ -10,7 +10,7 @@ import cv2
 import numpy as np
 import torch
 from omegaconf import DictConfig, ListConfig
-from torch import Tensor
+from torch import Tensor, cuda, device
 
 from anomalib.config import get_configurable_parameters
 from anomalib.deploy.export import get_model_metadata
@@ -30,18 +30,14 @@ class TorchInferencer(Inferencer):
         model_source (Union[str, Path, AnomalyModule]): Path to the model ckpt file or the Anomaly model.
         meta_data_path (Union[str, Path], optional): Path to metadata file. If none, it tries to load the params
                 from the model state_dict. Defaults to None.
-        device (Optional[str], optional): Device to use for inference. Options are auto, cpu, cuda. Defaults to "auto".
     """
 
     def __init__(
         self,
         config: Union[str, Path, DictConfig, ListConfig],
         model_source: Union[str, Path, AnomalyModule],
-        meta_data_path: Optional[Union[str, Path]] = None,
-        device: str = "auto",
+        meta_data_path: Union[str, Path] = None,
     ):
-
-        self.device = self._get_device(device)
 
         # Check and load the configuration
         if isinstance(config, (str, Path)):
@@ -58,24 +54,6 @@ class TorchInferencer(Inferencer):
             self.model = self.load_model(model_source)
 
         self.meta_data = self._load_meta_data(meta_data_path)
-
-    def _get_device(self, device: str) -> torch.device:
-        """Get the device to use for inference.
-
-        Args:
-            device (str): Device to use for inference. Options are auto, cpu, cuda.
-
-        Returns:
-            torch.device: Device to use for inference.
-        """
-        if device not in ("auto", "cpu", "cuda", "gpu"):
-            raise ValueError(f"Unknown device {device}")
-
-        if device == "auto":
-            device = "cuda" if torch.cuda.is_available() else "cpu"
-        elif device == "gpu":
-            device = "cuda"
-        return torch.device(device)
 
     def _load_meta_data(self, path: Optional[Union[str, Path]] = None) -> Union[Dict, DictConfig]:
         """Load metadata from file or from model state dict.
@@ -104,9 +82,10 @@ class TorchInferencer(Inferencer):
             (AnomalyModule): PyTorch Lightning model.
         """
         model = get_model(self.config)
-        model.load_state_dict(torch.load(path, map_location=self.device)["state_dict"])
+        torch_device = device("cuda" if cuda.is_available() else "cpu")
+        model.load_state_dict(torch.load(path, map_location=torch_device)["state_dict"])
         model.eval()
-        return model.to(self.device)
+        return model
 
     def pre_process(self, image: np.ndarray) -> Tensor:
         """Pre process the input image by applying transformations.
@@ -127,7 +106,7 @@ class TorchInferencer(Inferencer):
         if len(processed_image) == 3:
             processed_image = processed_image.unsqueeze(0)
 
-        return processed_image.to(self.device)
+        return processed_image
 
     def forward(self, image: Tensor) -> Tensor:
         """Forward-Pass input tensor to the model.
@@ -184,7 +163,7 @@ class TorchInferencer(Inferencer):
             pred_mask = (anomaly_map >= meta_data["pixel_threshold"]).squeeze().astype(np.uint8)
 
         anomaly_map = anomaly_map.squeeze()
-        anomaly_map, pred_score = self._normalize(anomaly_maps=anomaly_map, pred_scores=pred_score, meta_data=meta_data)
+        anomaly_map, pred_score = self._normalize(anomaly_map, pred_score, meta_data)
 
         if isinstance(anomaly_map, Tensor):
             anomaly_map = anomaly_map.detach().cpu().numpy()
