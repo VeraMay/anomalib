@@ -14,7 +14,7 @@ import torch
 from torch import Tensor
 from torch.types import Number
 
-from anomalib.models.components import AnomalyModule
+from ...anomalib.models.components import AnomalyModule
 
 
 class ExportMode(str, Enum):

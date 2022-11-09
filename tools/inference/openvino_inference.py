@@ -11,13 +11,13 @@ import warnings
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
 
-from anomalib.data.utils import (
+from ...anomalib.data.utils import (
     generate_output_image_filename,
     get_image_filenames,
     read_image,
 )
-from anomalib.deploy import OpenVINOInferencer
-from anomalib.post_processing import Visualizer
+from ...anomalib.deploy import OpenVINOInferencer
+from ...anomalib.post_processing import Visualizer
 
 
 def get_args() -> Namespace:

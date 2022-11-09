@@ -14,8 +14,8 @@ from anomalib.models.components import (
     FeatureExtractor,
     KCenterGreedy,
 )
-from anomalib.models.patchcore.anomaly_map import AnomalyMapGenerator
-from anomalib.pre_processing import Tiler
+from ....anomalib.models.patchcore.anomaly_map import AnomalyMapGenerator
+from ....anomalib.pre_processing import Tiler
 
 
 class PatchcoreModel(DynamicBufferModule, nn.Module):

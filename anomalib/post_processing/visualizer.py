@@ -13,8 +13,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from skimage.segmentation import mark_boundaries
 
-from anomalib.data.utils import read_image
-from anomalib.post_processing.post_process import (
+from ...anomalib.data.utils import read_image
+from ...anomalib.post_processing.post_process import (
     add_anomalous_label,
     add_normal_label,
     superimpose_anomaly_map,

@@ -12,8 +12,8 @@ import torch
 from omegaconf import DictConfig, ListConfig
 from torch.utils.data import DataLoader
 
-from anomalib.deploy import OpenVINOInferencer, TorchInferencer
-from anomalib.models.components import AnomalyModule
+from .....anomalib.deploy import OpenVINOInferencer, TorchInferencer
+from .....anomalib.models.components import AnomalyModule
 
 
 class MockImageLoader:

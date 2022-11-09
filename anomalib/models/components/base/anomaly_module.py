@@ -13,8 +13,8 @@ from pytorch_lightning.callbacks.base import Callback
 from torch import Tensor, nn
 from torchmetrics import Metric
 
-from anomalib.post_processing import ThresholdMethod
-from anomalib.utils.metrics import (
+from .....anomalib.post_processing import ThresholdMethod
+from .....anomalib.utils.metrics import (
     AnomalibMetricCollection,
     AnomalyScoreDistribution,
     AnomalyScoreThreshold,

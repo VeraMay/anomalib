@@ -9,10 +9,10 @@ from pathlib import Path
 from pytorch_lightning import Trainer
 from torch.utils.data import DataLoader
 
-from anomalib.config import get_configurable_parameters
-from anomalib.data.inference import InferenceDataset
-from anomalib.models import get_model
-from anomalib.utils.callbacks import get_callbacks
+from ...anomalib.config import get_configurable_parameters
+from ...anomalib.data.inference import InferenceDataset
+from ...anomalib.models import get_model
+from ...anomalib.utils.callbacks import get_callbacks
 
 
 def get_args() -> Namespace:

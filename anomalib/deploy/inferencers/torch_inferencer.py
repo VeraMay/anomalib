@@ -12,11 +12,11 @@ import torch
 from omegaconf import DictConfig, ListConfig
 from torch import Tensor, cuda, device
 
-from anomalib.config import get_configurable_parameters
-from anomalib.deploy.export import get_model_metadata
-from anomalib.models import get_model
-from anomalib.models.components import AnomalyModule
-from anomalib.pre_processing import PreProcessor
+from ....anomalib.config import get_configurable_parameters
+from ....anomalib.deploy.export import get_model_metadata
+from ....anomalib.models import get_model
+from ....anomalib.models.components import AnomalyModule
+from ....anomalib.pre_processing import PreProcessor
 
 from .base_inferencer import Inferencer
 

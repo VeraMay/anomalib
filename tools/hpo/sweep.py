@@ -10,8 +10,8 @@ from typing import Union
 from omegaconf import OmegaConf
 from pytorch_lightning import seed_everything
 
-from anomalib.config import get_configurable_parameters
-from anomalib.utils.hpo import CometSweep, WandbSweep
+from ...anomalib.config import get_configurable_parameters
+from ...anomalib.utils.hpo import CometSweep, WandbSweep
 
 
 def get_args():

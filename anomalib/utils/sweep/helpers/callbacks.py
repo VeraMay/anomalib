@@ -13,7 +13,7 @@ from anomalib.utils.callbacks import (
     MetricsConfigurationCallback,
     PostProcessingConfigurationCallback,
 )
-from anomalib.utils.callbacks.timer import TimerCallback
+from .....anomalib.utils.callbacks.timer import TimerCallback
 
 
 def get_sweep_callbacks(config: Union[ListConfig, DictConfig]) -> List[Callback]:

@@ -14,11 +14,11 @@ from argparse import ArgumentParser, Namespace
 
 from pytorch_lightning import Trainer, seed_everything
 
-from anomalib.config import get_configurable_parameters
-from anomalib.data import get_datamodule
-from anomalib.models import get_model
-from anomalib.utils.callbacks import LoadModelCallback, get_callbacks
-from anomalib.utils.loggers import configure_logger, get_experiment_logger
+from ..anomalib.config import get_configurable_parameters
+from ..anomalib.data import get_datamodule
+from ..anomalib.models import get_model
+from ..anomalib.utils.callbacks import LoadModelCallback, get_callbacks
+from ..anomalib.utils.loggers import configure_logger, get_experiment_logger
 
 logger = logging.getLogger("anomalib")
 
