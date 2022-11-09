@@ -13,7 +13,7 @@ from anomalib.models.reverse_distillation.components import (
     get_bottleneck_layer,
     get_decoder,
 )
-from anomalib.pre_processing import Tiler
+from ....anomalib.pre_processing import Tiler
 
 
 class ReverseDistillationModel(nn.Module):
