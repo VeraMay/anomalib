@@ -7,9 +7,9 @@ from typing import List, Optional, Tuple, Union
 
 from torch import Tensor, nn
 
-from anomalib.models.components import FeatureExtractor
-from anomalib.models.reverse_distillation.anomaly_map import AnomalyMapGenerator
-from anomalib.models.reverse_distillation.components import (
+from ....anomalib.models.components import FeatureExtractor
+from ....anomalib.models.reverse_distillation.anomaly_map import AnomalyMapGenerator
+from ....anomalib.models.reverse_distillation.components import (
     get_bottleneck_layer,
     get_decoder,
 )

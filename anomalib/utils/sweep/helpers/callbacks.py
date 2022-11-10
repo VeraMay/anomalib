@@ -9,7 +9,7 @@ from typing import List, Union
 from omegaconf import DictConfig, ListConfig
 from pytorch_lightning import Callback
 
-from anomalib.utils.callbacks import (
+from .....anomalib.utils.callbacks import (
     MetricsConfigurationCallback,
     PostProcessingConfigurationCallback,
 )

@@ -1,7 +1,7 @@
 import pytest
 import torch
 
-from anomalib.models.components.feature_extractors import FeatureExtractor
+from ....anomalib.models.components.feature_extractors import FeatureExtractor
 
 
 class TestFeatureExtractor:

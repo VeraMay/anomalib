@@ -15,7 +15,7 @@ import pytest
 import skimage
 from torch import Tensor
 
-from anomalib.pre_processing import PreProcessor
+from .....anomalib.pre_processing import PreProcessor
 
 
 def test_transforms_and_image_size_cannot_be_none():
