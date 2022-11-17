@@ -3,7 +3,7 @@ from typing import List, Optional, Union
 
 from omegaconf import DictConfig, ListConfig
 
-from ...anomalib.config import get_configurable_parameters
+from anomalib.config import get_configurable_parameters
 
 from .dataset import get_dataset_path
 

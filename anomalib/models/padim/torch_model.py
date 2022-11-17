@@ -10,9 +10,9 @@ import torch
 import torch.nn.functional as F
 from torch import Tensor, nn
 
-from ....anomalib.models.components import FeatureExtractor, MultiVariateGaussian
-from ....anomalib.models.padim.anomaly_map import AnomalyMapGenerator
-from ....anomalib.pre_processing import Tiler
+from anomalib.models.components import FeatureExtractor, MultiVariateGaussian
+from anomalib.models.padim.anomaly_map import AnomalyMapGenerator
+from anomalib.pre_processing import Tiler
 
 DIMS = {
     "resnet18": {"orig_dims": 448, "reduced_dims": 100, "emb_scale": 4},

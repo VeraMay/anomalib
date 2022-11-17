@@ -5,8 +5,8 @@ import pytest
 import pytorch_lightning as pl
 from pytorch_lightning.callbacks.early_stopping import EarlyStopping
 
-from ......anomalib.deploy import ExportMode
-from ......anomalib.utils.callbacks.export import ExportCallback
+from anomalib.deploy import ExportMode
+from anomalib.utils.callbacks.export import ExportCallback
 from tests.helpers.config import get_test_configurable_parameters
 from tests.pre_merge.utils.callbacks.export_callback.dummy_lightning_model import (
     DummyLightningModule,

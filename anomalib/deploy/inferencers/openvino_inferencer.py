@@ -11,8 +11,8 @@ import cv2
 import numpy as np
 from omegaconf import DictConfig, ListConfig
 
-from ....anomalib.config import get_configurable_parameters
-from ....anomalib.pre_processing import PreProcessor
+from anomalib.config import get_configurable_parameters
+from anomalib.pre_processing import PreProcessor
 
 from .base_inferencer import Inferencer
 

@@ -9,7 +9,7 @@ import numpy as np
 import pytest
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
-from ....anomalib.post_processing.visualizer import ImageGrid
+from anomalib.post_processing.visualizer import ImageGrid
 from tests.helpers.dataset import TestDataset
 from tests.helpers.model import setup_model_train
 

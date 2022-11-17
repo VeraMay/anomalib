@@ -12,7 +12,7 @@ import pytest
 from omegaconf import OmegaConf
 from pytorch_lightning.loggers import CSVLogger
 
-from .....anomalib.utils.loggers import (
+from anomalib.utils.loggers import (
     AnomalibCometLogger,
     AnomalibTensorBoardLogger,
     AnomalibWandbLogger,

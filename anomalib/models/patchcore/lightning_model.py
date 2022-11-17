@@ -14,8 +14,8 @@ from omegaconf import DictConfig, ListConfig
 from pytorch_lightning.utilities.cli import MODEL_REGISTRY
 from torch import Tensor
 
-from ....anomalib.models.components import AnomalyModule
-from ....anomalib.models.patchcore.torch_model import PatchcoreModel
+from anomalib.models.components import AnomalyModule
+from anomalib.models.patchcore.torch_model import PatchcoreModel
 
 logger = logging.getLogger(__name__)
 

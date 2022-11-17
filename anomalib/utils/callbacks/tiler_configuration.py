@@ -10,8 +10,8 @@ import pytorch_lightning as pl
 from pytorch_lightning.callbacks import Callback
 from pytorch_lightning.utilities.cli import CALLBACK_REGISTRY
 
-from ....anomalib.models.components import AnomalyModule
-from ....anomalib.pre_processing.tiler import Tiler
+from anomalib.models.components import AnomalyModule
+from anomalib.pre_processing.tiler import Tiler
 
 __all__ = ["TilerConfigurationCallback"]
 

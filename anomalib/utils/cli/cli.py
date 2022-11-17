@@ -19,7 +19,7 @@ from pytorch_lightning.utilities.cli import (
     SaveConfigCallback,
 )
 
-from ....anomalib.utils.callbacks import (
+from anomalib.utils.callbacks import (
     CdfNormalizationCallback,
     ImageVisualizerCallback,
     LoadModelCallback,
@@ -31,7 +31,7 @@ from ....anomalib.utils.callbacks import (
     TimerCallback,
     add_visualizer_callback,
 )
-from ....anomalib.utils.loggers import configure_logger
+from anomalib.utils.loggers import configure_logger
 
 logger = logging.getLogger("anomalib.cli")
 
@@ -225,7 +225,7 @@ class AnomalibCLI(LightningCLI):
 
         # Export to OpenVINO
         if config.export_mode is not None:
-            from ....anomalib.utils.callbacks.export import (  # pylint: disable=import-outside-toplevel
+            from anomalib.utils.callbacks.export import (  # pylint: disable=import-outside-toplevel
                 ExportCallback,
             )
 

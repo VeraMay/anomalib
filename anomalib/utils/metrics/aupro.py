@@ -12,7 +12,7 @@ from torchmetrics import Metric
 from torchmetrics.functional import auc, roc
 from torchmetrics.utilities.data import dim_zero_cat
 
-from ....anomalib.utils.metrics.pro import (
+from anomalib.utils.metrics.pro import (
     connected_components_cpu,
     connected_components_gpu,
 )

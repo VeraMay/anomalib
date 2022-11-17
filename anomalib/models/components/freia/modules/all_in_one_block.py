@@ -18,7 +18,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from scipy.stats import special_ortho_group
 
-from ......anomalib.models.components.freia.modules.base import InvertibleModule
+from anomalib.models.components.freia.modules.base import InvertibleModule
 
 
 class AllInOneBlock(InvertibleModule):

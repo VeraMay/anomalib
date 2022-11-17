@@ -9,11 +9,11 @@ from typing import List, Union
 from omegaconf import DictConfig, ListConfig
 from pytorch_lightning import Callback
 
-from .....anomalib.utils.callbacks import (
+from anomalib.utils.callbacks import (
     MetricsConfigurationCallback,
     PostProcessingConfigurationCallback,
 )
-from .....anomalib.utils.callbacks.timer import TimerCallback
+from anomalib.utils.callbacks.timer import TimerCallback
 
 
 def get_sweep_callbacks(config: Union[ListConfig, DictConfig]) -> List[Callback]:

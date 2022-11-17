@@ -15,7 +15,7 @@ from typing import Iterable, List, Tuple
 import torch
 from torch import Tensor, nn
 
-from ......anomalib.models.components.freia.modules.base import InvertibleModule
+from anomalib.models.components.freia.modules.base import InvertibleModule
 
 
 class SequenceINN(InvertibleModule):

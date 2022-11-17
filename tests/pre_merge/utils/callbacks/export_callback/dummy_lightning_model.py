@@ -8,8 +8,8 @@ from torch.utils.data import DataLoader
 from torchvision import transforms
 from torchvision.datasets import FakeData
 
-from ......anomalib.utils.callbacks import ImageVisualizerCallback
-from ......anomalib.utils.metrics import (
+from anomalib.utils.callbacks import ImageVisualizerCallback
+from anomalib.utils.metrics import (
     AnomalyScoreDistribution,
     AnomalyScoreThreshold,
     MinMax,

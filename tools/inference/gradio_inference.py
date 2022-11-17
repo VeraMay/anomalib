@@ -16,7 +16,7 @@ import gradio.inputs
 import gradio.outputs
 import numpy as np
 
-from ...anomalib.deploy import Inferencer
+from anomalib.deploy import Inferencer
 
 
 def get_args() -> Namespace:
