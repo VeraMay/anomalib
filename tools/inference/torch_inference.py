@@ -73,8 +73,10 @@ def infer(config, weights, input) -> None:
     inferencer = TorchInferencer(config=config, model_source=weights)
 
     #filenames = get_image_filenames(path=input)
-    
-    predictions = inferencer.predict(image=input)
+    predictions = []
+    for image in input:
+        prediction = inferencer.predict(image=image)
+        predictions.append(prediction.pred_mask)
     return predictions
     '''output = visualizer.visualize_image(predictions)
 
