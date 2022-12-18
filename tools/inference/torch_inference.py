@@ -72,7 +72,6 @@ def infer(config, weights, input) -> None:
     # Create the inferencer and visualizer.
     inferencer = TorchInferencer(config=config, model_source=weights)
 
-    #filenames = get_image_filenames(path=input)
     predictions = []
     for image in input:
         prediction = inferencer.predict(image=image)
